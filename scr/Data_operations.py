@@ -2,11 +2,18 @@ import json
 
 
 def json_fail():
+    """
+    Функция для получения даных из фала json
+    """
+
     with open('operations.json', "r", encoding="utf-8") as operations_bank:
         return json.load(operations_bank)
 
 
 def data_new(data):
+    """
+    Функция для создания нового формата даты
+    """
     date_new = []
     data_operations = sort_and_executed(data)
     for data_bank in data_operations:
@@ -19,6 +26,9 @@ def data_new(data):
 
 
 def to_new(data):
+    """
+    Функция для скрытия счета и номера карт получателя
+    """
     score = data_new(data)
     new_to = []
     for score_bank in score:
@@ -36,6 +46,9 @@ def to_new(data):
 
 
 def from_new(data):
+    """
+    Функция для скрытия счета и номера карт отправителя
+    """
     new_from = []
     score = to_new(data)
     for score_bank in score:
@@ -55,6 +68,9 @@ def from_new(data):
 
 
 def sort_and_executed(data):
+    """
+    Функция для сортировки операций по времени
+    """
     new_item = []
     for item in data:
         if item.get('state') == 'EXECUTED':
