@@ -2,6 +2,9 @@ from scr import Data_operations
 
 
 def test_data_new():
+    """
+    Тест оформления даты
+    """
     sample_data = [
         {
             "date": "2022-01-01T04:27:37.904916",
@@ -18,6 +21,9 @@ def test_data_new():
 
 
 def test_to_new():
+    """
+    Тест скрытия номера карты или счета отправителя
+    """
     sample_to = [
         {
             "id": 441945886,
@@ -56,6 +62,9 @@ def test_to_new():
 
 
 def test_from_new():
+    """
+    Тест скрытия номера карты или счета получателя
+    """
     sample_to = [
         {
             "id": 441945886,
